@@ -4,9 +4,11 @@
     <string name="your_name">What\'s your name?</string>
     <string name="next">Next</string>
     <string name="logo">Application logo</string>
-
+    <string name="what">What\'s your name</string>
+    <string name="whatname">NAME</string>
 
 
 
 
 </resources>
+
