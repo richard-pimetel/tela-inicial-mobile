@@ -57,8 +57,8 @@ fun HomeScreens(modifier: Modifier = Modifier) {
         Column(
             modifier = Modifier
                 .fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.SpaceAround
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.SpaceAround
 
 
         ) {
@@ -82,10 +82,10 @@ fun HomeScreens(modifier: Modifier = Modifier) {
                 modifier = Modifier
                     .fillMaxSize()
                     .height(100.dp),
-                    shape = RoundedCornerShape(
-                        topStart = 48.dp,
-                        topEnd = 48.dp
-                    )
+                shape = RoundedCornerShape(
+                    topStart = 48.dp,
+                    topEnd = 48.dp
+                )
 
             ) {
                 Column {
@@ -96,9 +96,9 @@ fun HomeScreens(modifier: Modifier = Modifier) {
                             )
                     ) {
                         Text(
-                        text = stringResource(R.string.your_name),
-                        fontSize = 30.sp,
-                        modifier = Modifier
+                            text = stringResource(R.string.your_name),
+                            fontSize = 30.sp,
+                            modifier = Modifier
 
 
                         )
@@ -110,24 +110,24 @@ fun HomeScreens(modifier: Modifier = Modifier) {
                             label = {
                                 Text(text = "Digite o seu nome ")
                             },
-                                modifier = Modifier,
+                            modifier = Modifier,
 
-                                    leadingIcon = {
-                                        Icon(
-                                            imageVector = Icons.Default.Email,
-                                            contentDescription = "",
-                                            tint = Color(0xFF2196F3)
+                            leadingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.Email,
+                                    contentDescription = "",
+                                    tint = Color(0xFF2196F3)
 
-                                        )
-                                    },
+                                )
+                            },
 
-                                trailingIcon = {
-                                    Icon(
-                                        imageVector = Icons.Default.LocationOn,
-                                        contentDescription = "",
-                                        tint = Color(0xFF3F51B5)
-                                    )
-                                },
+                            trailingIcon = {
+                                Icon(
+                                    imageVector = Icons.Default.LocationOn,
+                                    contentDescription = "",
+                                    tint = Color(0xFF3F51B5)
+                                )
+                            },
                             keyboardOptions = KeyboardOptions(
                                 keyboardType = KeyboardType.Text,
                                 capitalization = KeyboardCapitalization.Sentences
@@ -138,7 +138,7 @@ fun HomeScreens(modifier: Modifier = Modifier) {
                         )
 
 
-                        }
+                    }
 
                     Column (
                         modifier = Modifier
@@ -149,14 +149,14 @@ fun HomeScreens(modifier: Modifier = Modifier) {
                             onClick = {},
                             shape = RoundedCornerShape(15.dp)
                         ) {
-                        Text(text = stringResource(R.string.next))
+                            Text(text = stringResource(R.string.next))
                             Icon(
                                 imageVector = Icons.Filled.ArrowForward,
                                 contentDescription = ""
 
                             )
 
-                    } }
+                        } }
 
 
 

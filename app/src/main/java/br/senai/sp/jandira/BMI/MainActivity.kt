@@ -13,6 +13,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import br.senai.sp.jandira.BMI.screens.HomeScreens
 import br.senai.sp.jandira.BMI.ui.theme.BMITheme
+import br.senai.sp.jandira.BMI.userDataScreens.userDataScreens
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BMITheme {
-
+                userDataScreens()
             }
         }
     }
