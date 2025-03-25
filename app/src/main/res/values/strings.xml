@@ -12,7 +12,15 @@
     <string name="height">Height</string>
     <string name="buttonCalculate">Calculate</string>
     <string name="support_name">The name is required!</string>
-
+    <string name="calculate">Calculate</string>
+    <string name="result">Your BMI Result</string>
+    <string name="imcValue">20</string>
+    <string name="classBMI">You have class Normal</string>
+    <string name="ageValue">17</string>
+    <string name="weightValue">55Kg</string>
+    <string name="high">High</string>
+    <string name="highValue">1,70cm</string>
+    <string name="newCalculate">New Calculate</string>
 
 
 

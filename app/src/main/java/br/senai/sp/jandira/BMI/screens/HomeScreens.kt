@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -34,10 +33,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.BMI.R
 
 @Composable
-fun HomeScreens(modifier: Modifier = Modifier) {
+fun HomeScreens(controleDeNavegacao: NavHostController?) {
 
     var nomeState = remember {
         mutableStateOf(value = "")
@@ -49,8 +49,8 @@ fun HomeScreens(modifier: Modifier = Modifier) {
             .fillMaxSize()
             .background(brush = Brush.horizontalGradient(
                 listOf(
-                    Color(0xFF324B33),
-                    Color(0xFF1CA121)
+                    Color(0xFF2F01A4),
+                    Color(0xFF3114B2)
                 )
             ))
     ){
@@ -146,7 +146,9 @@ fun HomeScreens(modifier: Modifier = Modifier) {
                                 start = 300.dp)
                     ){
                         Button(
-                            onClick = {},
+                            onClick = {
+                                controleDeNavegacao?.navigate("user_data")
+                            },
                             shape = RoundedCornerShape(15.dp)
                         ) {
                             Text(text = stringResource(R.string.next))
@@ -173,5 +175,5 @@ fun HomeScreens(modifier: Modifier = Modifier) {
 @Preview(showSystemUi = true)
 @Composable
 private fun HomeScreensPreview() {
-    HomeScreens()
+    HomeScreens(null)
 }

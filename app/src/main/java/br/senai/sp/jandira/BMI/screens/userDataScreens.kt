@@ -44,10 +44,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import br.senai.sp.jandira.BMI.R
 
 @Composable
-fun userDataScreens(modifier: Modifier = Modifier) {
+fun userDataScreens(controleDeNavegacao: NavHostController?) {
     var inputAge = remember {
         mutableStateOf(value = "")
     }
@@ -249,7 +250,9 @@ fun userDataScreens(modifier: Modifier = Modifier) {
                     }
 
                     Button(
-                        onClick = {},
+                        onClick = {
+                            controleDeNavegacao?.navigate("bmi_result")
+                        },
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding( 12.dp, 5.dp),
@@ -273,6 +276,6 @@ fun userDataScreens(modifier: Modifier = Modifier) {
 @Preview(showSystemUi = true)
 @Composable
 private fun userDataScreensPreview() {
-    userDataScreens()
+    userDataScreens(null)
 }
 
