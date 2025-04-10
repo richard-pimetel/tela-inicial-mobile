@@ -38,6 +38,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import br.senai.sp.jandira.BMI.R
+import br.senai.sp.jandira.BMI.model.bmiCalculator
+import java.util.Locale
 
 @Composable
 fun ResultScreen(controleDeNavegacao: NavHostController?) {
@@ -49,6 +51,9 @@ fun ResultScreen(controleDeNavegacao: NavHostController?) {
     val userAge = userFile.getInt("user_age", 0)
     val userWeight = userFile.getInt("user_weight", 0)
     val userHeight = userFile.getInt("user_height", 0)
+
+
+    val resultBmi = bmiCalculator(userWeight, userHeight.toDouble())
 
     Box(
         modifier = Modifier
@@ -102,12 +107,7 @@ fun ResultScreen(controleDeNavegacao: NavHostController?) {
                         modifier = Modifier
                             .size(100.dp),
                         shape = CircleShape,
-                        border = BorderStroke(5.dp, brush = Brush.linearGradient(
-                            listOf(
-                                Color(color = 0xFF340B93),
-                                Color(color = 0xFF4D36D0)
-                            )
-                        )),
+                        border = BorderStroke(5.dp, color = resultBmi.color),
                         colors = CardDefaults.cardColors(
                             containerColor = Color.White
                         )
@@ -118,8 +118,9 @@ fun ResultScreen(controleDeNavegacao: NavHostController?) {
                             horizontalAlignment = Alignment.CenterHorizontally,
                             verticalArrangement = Arrangement.Center
                         ) {
+                            val bmiValues = resultBmi.bmiValues.second
                             Text(
-                                text = stringResource(R.string.imcValue),
+                                text = String.format(Locale.getDefault(),"%.1f", bmiValues),
                                 color = Color.Black,
                                 fontWeight = FontWeight.Bold,
                                 fontSize = 35.sp
@@ -132,7 +133,7 @@ fun ResultScreen(controleDeNavegacao: NavHostController?) {
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
                         Text(
-                            text = stringResource(R.string.classBMI),
+                            text = "${resultBmi.bmiValues.first}",
                             color = Color.Black,
                             fontWeight = FontWeight.Bold,
                             fontSize = 20.sp
